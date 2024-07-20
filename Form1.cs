@@ -59,7 +59,7 @@ namespace AlarmClock
             {
                 timer1.Stop();
 
-                player.SoundLocation = @"Sound.mp3";
+                player.SoundLocation = @"Sound.wav";
                 player.PlayLooping();
             }
         }
@@ -80,7 +80,7 @@ namespace AlarmClock
         {
             bool isHave = true;
 
-            if (!File.Exists(@"Sound.mp3"))
+            if (!File.Exists(@"Sound.wav"))
             {
                 btnStart.Enabled = false;
                 MessageBox.Show("Звуковой файл не обнаружен! Добавьте его.");
