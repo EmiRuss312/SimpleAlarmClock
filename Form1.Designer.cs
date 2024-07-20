@@ -34,6 +34,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.AddButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -79,11 +80,23 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(166, 77);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(50, 25);
+            this.AddButton.TabIndex = 4;
+            this.AddButton.Text = "+";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
             // AC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(228, 146);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
@@ -102,6 +115,7 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button AddButton;
     }
 }
 
