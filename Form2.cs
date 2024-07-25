@@ -38,7 +38,7 @@ namespace AlarmClock
         {
             string curPath = Directory.GetCurrentDirectory();
 
-            if (Path.GetFullPath(openFileDialog1.FileName) != "")
+            if (textBox1.Text != "")
             {
                 if (File.Exists(curPath + "/Sound.wav"))
                 {
