@@ -121,6 +121,23 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AddButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJpSURBVFhH7ZbLyw1hHMfHPZHIxlJKYSULCzY2xEpZezcW
+        FBZ2yHWjbCzkX7CyRCkLKZEF9SaUrQ2KLN0vn88551tPp3nHcWbmtfGtT89t5nd7Zp6Z6r961kJYPGrn
+        RQtgEejUfmTfuV6ULHVcyvktcBQewwlQrQOpyzLtatgHV+E5fIdv8AvOgeq0Ema5CY7BTfgAOgs/4dOo
+        fxZU6wBWwR64As/ALEunP8CsnZcv0DqAPMXr4R1o0OzS6jBO009A6bfaggTgQ6Uxs/wKyVInzsVpHN+H
+        R6PxGVCtAtgMZpysS4fyFm7AIdgIysxdOzUYdVSBYBWewmXYBSsgiqOL0FkAVkBjH+EIbIDywFF5RZcO
+        RlV1HjoLwFdOYy8Go6Fc06iOy3NhybDbTwAvQYfOlxWwr4O0qtMtKAOIyqxzncGtHHa7fQjrAlAJQqeX
+        4BV4XtyGO+A9U7+GOs8D1VSB5fAAXC/PhKkPorKkTRWIwdPg2mcwAM+KqY9inSezrXAQdsI2GA8gwT0E
+        13RqG/66AnG8Fm6BN+fcfzNq67ZgFlyrO5JtT4KaeAvuQgyIhmO8PAdi8Dq45uloGzLeC8o3ZE5lcTfk
+        5mQvKW8ZQO7ZDsk2QWfsRylKxWqVbCxXDNmGVMC/nVJ5DvbDeyivvQfrQDU6VwngOHjzXAH4iVWlwQSx
+        Bg7AYdgBznvdH52rGPGrp/O8SrY69xUzgAugxh8ot2PckTZjdyLl4nxEknXaJ5Bjti4r5wxMGh+4JiWI
+        GfD18mfzNVwDS6wmKmkbJQhbf7eXDUbDce/Oo/E9rdvjeZFO/4njnlVVvwEbb9bcxPf9OwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAA

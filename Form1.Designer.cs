@@ -42,7 +42,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 42);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(153, 29);
             this.dateTimePicker1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(12, 77);
+            this.btnStart.Location = new System.Drawing.Point(12, 47);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(50, 25);
             this.btnStart.TabIndex = 1;
@@ -61,7 +61,7 @@
             // btnStop
             // 
             this.btnStop.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(68, 77);
+            this.btnStop.Location = new System.Drawing.Point(12, 47);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(50, 25);
             this.btnStop.TabIndex = 2;
@@ -83,12 +83,12 @@
             // 
             // AddButton
             // 
+            this.AddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddButton.BackgroundImage")));
             this.AddButton.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.Location = new System.Drawing.Point(166, 77);
+            this.AddButton.Location = new System.Drawing.Point(171, 12);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(50, 25);
+            this.AddButton.Size = new System.Drawing.Size(32, 32);
             this.AddButton.TabIndex = 4;
-            this.AddButton.Text = "+";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 146);
+            this.ClientSize = new System.Drawing.Size(210, 77);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnStop);

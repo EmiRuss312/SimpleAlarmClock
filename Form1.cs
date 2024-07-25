@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace AlarmClock
 {
@@ -37,16 +29,18 @@ namespace AlarmClock
 
             timer1.Start();
             lblStatus.Text = "Будильник запущен!";
-            btnStart.Enabled = false;
+
             btnStop.Visible = true;
-            btnStop.Enabled = true;
+            btnStart.Visible = false;
+            AddButton.Visible = false;
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             lblStatus.Text = "Будильник выключен!";
-            btnStart.Enabled = true;
-            btnStop.Enabled = false;
+            btnStart.Visible = true;
+            AddButton.Visible = true;
+            btnStop.Visible = false;
             player.Stop();  
         }
 

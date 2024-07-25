@@ -31,7 +31,6 @@ namespace AlarmClock
                 }
 
                 textBox1.Text = Path.GetFileName(openFileDialog1.FileName);
-                textBox2.Text = Path.GetFullPath(openFileDialog1.FileName);
             }
         }
 
@@ -39,14 +38,14 @@ namespace AlarmClock
         {
             string curPath = Directory.GetCurrentDirectory();
 
-            if (textBox1.Text != "" || textBox2.Text != "")
+            if (Path.GetFullPath(openFileDialog1.FileName) != "")
             {
                 if (File.Exists(curPath + "/Sound.wav"))
                 {
                     File.Delete(curPath + "/Sound.wav");
                 }
 
-                File.Copy(textBox2.Text, curPath + "\\" + "Sound.wav");
+                File.Copy(Path.GetFullPath(openFileDialog1.FileName), curPath + "\\" + "Sound.wav");
                 MessageBox.Show("Звук будильника установлен!");
                 Close();
             }
