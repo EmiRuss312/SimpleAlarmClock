@@ -1,6 +1,7 @@
 ﻿using NAudio.Wave;
 using System;
 using System.IO;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace AlarmClock
@@ -34,6 +35,9 @@ namespace AlarmClock
             btnStart.Visible = false;
             AddButton.Enabled = false;
             dateTimePicker1.Enabled = false;
+            btnLoadTimePreset.Enabled = false;
+
+            saveTimePreset("alarmTime.txt");
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -41,8 +45,9 @@ namespace AlarmClock
             lblStatus.Text = "Будильник выключен!";
             btnStart.Visible = true;
             AddButton.Enabled = true;
-            btnStop.Visible = false;
             dateTimePicker1.Enabled = true;
+            btnLoadTimePreset.Enabled = true;
+            btnStop.Visible = false;
 
             waveOutDevice?.Stop();
             audioFileReader?.Dispose();
@@ -73,6 +78,11 @@ namespace AlarmClock
             sc.Show();
         }
 
+        private void btnLoadTimePreset_Click(object sender, EventArgs e)
+        {
+            loadTimePreset("alarmTime.txt");
+        }
+
         private void onPlaybackStopped(object sender, StoppedEventArgs e)
         {
             audioFileReader.Position = 0;
@@ -97,6 +107,49 @@ namespace AlarmClock
             else btnStart.Enabled = true;
 
             return isHave;
+        }
+
+        private void saveTimePreset(string filePath)
+        {
+            DateTime selectedTime = dateTimePicker1.Value;
+            string timeToSave = selectedTime.ToString("HH:mm:ss");
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    writer.WriteLine(timeToSave);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при сохранении времени: {ex.Message}");
+            }
+        }
+
+        private void loadTimePreset(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    string timeString;
+                    using (StreamReader reader = new StreamReader(filePath))
+                    {
+                        timeString = reader.ReadLine();
+                    }
+
+                    DateTime savedTime = DateTime.ParseExact(timeString, "HH:mm:ss", null);
+
+                    dateTimePicker1.Value = DateTime.Today.Add(savedTime.TimeOfDay);
+                    MessageBox.Show("Время успешно загружено!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при загрузке времени: {ex.Message}");
+                }
+            }
+            else MessageBox.Show("Пресет не обнаружен! Вы еще не запускали будильник!");
         }
     }
 }

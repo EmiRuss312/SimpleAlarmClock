@@ -36,6 +36,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.AddButton = new System.Windows.Forms.Button();
+            this.btnLoadTimePreset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -83,20 +84,32 @@
             // 
             // AddButton
             // 
-            this.AddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddButton.BackgroundImage")));
             this.AddButton.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.Location = new System.Drawing.Point(171, 12);
+            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
+            this.AddButton.Location = new System.Drawing.Point(128, 43);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(32, 32);
             this.AddButton.TabIndex = 4;
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // btnLoadTimePreset
+            // 
+            this.btnLoadTimePreset.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadTimePreset.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadTimePreset.Image")));
+            this.btnLoadTimePreset.Location = new System.Drawing.Point(90, 43);
+            this.btnLoadTimePreset.Name = "btnLoadTimePreset";
+            this.btnLoadTimePreset.Size = new System.Drawing.Size(32, 32);
+            this.btnLoadTimePreset.TabIndex = 5;
+            this.btnLoadTimePreset.UseVisualStyleBackColor = true;
+            this.btnLoadTimePreset.Click += new System.EventHandler(this.btnLoadTimePreset_Click);
+            // 
             // AC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(210, 77);
+            this.ClientSize = new System.Drawing.Size(172, 77);
+            this.Controls.Add(this.btnLoadTimePreset);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnStop);
@@ -104,7 +117,6 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AC";
-            this.Text = "AC";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -118,6 +130,7 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button btnLoadTimePreset;
     }
 }
 
