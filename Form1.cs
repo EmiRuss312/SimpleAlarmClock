@@ -1,14 +1,14 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.IO;
-using System.Media;
 using System.Windows.Forms;
 
 namespace AlarmClock
 {
     public partial class AC : Form
     {
-
-        SoundPlayer player = new SoundPlayer();
+        private IWavePlayer waveOutDevice;
+        private AudioFileReader audioFileReader;
         public AC()
         {
             InitializeComponent();
@@ -32,16 +32,21 @@ namespace AlarmClock
 
             btnStop.Visible = true;
             btnStart.Visible = false;
-            AddButton.Visible = false;
+            AddButton.Enabled = false;
+            dateTimePicker1.Enabled = false;
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             lblStatus.Text = "Будильник выключен!";
             btnStart.Visible = true;
-            AddButton.Visible = true;
+            AddButton.Enabled = true;
             btnStop.Visible = false;
-            player.Stop();  
+            dateTimePicker1.Enabled = true;
+
+            waveOutDevice?.Stop();
+            audioFileReader?.Dispose();
+            waveOutDevice?.Dispose();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -53,8 +58,11 @@ namespace AlarmClock
             {
                 timer1.Stop();
 
-                player.SoundLocation = @"Sound.wav";
-                player.PlayLooping();
+                waveOutDevice = new WaveOut();
+                audioFileReader = new AudioFileReader("Sound.mp3");
+                waveOutDevice.Init(audioFileReader);
+                waveOutDevice.PlaybackStopped += onPlaybackStopped;
+                waveOutDevice.Play();
             }
         }
 
@@ -63,6 +71,12 @@ namespace AlarmClock
             SoundChoise sc = new SoundChoise();
             sc.FormClosed += soundChoiseClosed;
             sc.Show();
+        }
+
+        private void onPlaybackStopped(object sender, StoppedEventArgs e)
+        {
+            audioFileReader.Position = 0;
+            waveOutDevice.Play();
         }
 
         private void soundChoiseClosed(object sender, FormClosedEventArgs e)
@@ -74,7 +88,7 @@ namespace AlarmClock
         {
             bool isHave = true;
 
-            if (!File.Exists(@"Sound.wav"))
+            if (!File.Exists(@"Sound.mp3"))
             {
                 btnStart.Enabled = false;
                 MessageBox.Show("Звуковой файл не обнаружен! Добавьте его.");

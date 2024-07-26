@@ -17,9 +17,9 @@ namespace AlarmClock
             {
                 String extension = Path.GetExtension(openFileDialog1.FileName);
                 
-                if (extension != ".wav")
+                if (extension != ".mp3")
                 {
-                    MessageBox.Show("Это не wav! Выберите другой файл!");
+                    MessageBox.Show("Это не mp3! Выберите другой файл!");
                     Close();
                 }
 
@@ -33,12 +33,12 @@ namespace AlarmClock
 
             if (textBox1.Text != "")
             {
-                if (File.Exists(curPath + "/Sound.wav"))
+                if (File.Exists(curPath + "/Sound.mp3"))
                 {
-                    File.Delete(curPath + "/Sound.wav");
+                    File.Delete(curPath + "/Sound.mp3");
                 }
 
-                File.Copy(Path.GetFullPath(openFileDialog1.FileName), curPath + "\\" + "Sound.wav");
+                File.Copy(Path.GetFullPath(openFileDialog1.FileName), curPath + "\\" + "Sound.mp3");
                 MessageBox.Show("Звук будильника установлен!");
                 Close();
             }
