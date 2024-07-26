@@ -9,6 +9,9 @@ namespace AlarmClock
         public SoundChoise()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(163, 29);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // btnStart
@@ -86,7 +86,7 @@
             // 
             this.AddButton.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
-            this.AddButton.Location = new System.Drawing.Point(128, 43);
+            this.AddButton.Location = new System.Drawing.Point(143, 43);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(32, 32);
             this.AddButton.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.btnLoadTimePreset.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadTimePreset.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadTimePreset.Image")));
-            this.btnLoadTimePreset.Location = new System.Drawing.Point(90, 43);
+            this.btnLoadTimePreset.Location = new System.Drawing.Point(105, 43);
             this.btnLoadTimePreset.Name = "btnLoadTimePreset";
             this.btnLoadTimePreset.Size = new System.Drawing.Size(32, 32);
             this.btnLoadTimePreset.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(172, 77);
+            this.ClientSize = new System.Drawing.Size(187, 77);
             this.Controls.Add(this.btnLoadTimePreset);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.lblStatus);

@@ -14,6 +14,9 @@ namespace AlarmClock
         {
             InitializeComponent();
             checkSound();
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
