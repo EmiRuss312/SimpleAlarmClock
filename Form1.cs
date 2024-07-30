@@ -1,7 +1,6 @@
 ﻿using NAudio.Wave;
 using System;
 using System.IO;
-using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace AlarmClock
@@ -17,11 +16,27 @@ namespace AlarmClock
 
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
+            AC_NotifyIcon.DoubleClick += (sender, e) => {
+                this.Show();
+            };
+            AC_NotifyIcon.ContextMenuStrip = new ContextMenuStrip();
+            AC_NotifyIcon.ContextMenuStrip.Items.Add("Закрыть приложение", null, ExitApplication);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             btnStop.Visible = false;
+        }
+
+        private void AC_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+            }
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -153,6 +168,11 @@ namespace AlarmClock
                 }
             }
             else MessageBox.Show("Пресет не обнаружен! Вы еще не запускали будильник!");
+        }
+
+        private void ExitApplication(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

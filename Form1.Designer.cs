@@ -37,6 +37,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.AddButton = new System.Windows.Forms.Button();
             this.btnLoadTimePreset = new System.Windows.Forms.Button();
+            this.AC_NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -104,6 +105,12 @@
             this.btnLoadTimePreset.UseVisualStyleBackColor = true;
             this.btnLoadTimePreset.Click += new System.EventHandler(this.btnLoadTimePreset_Click);
             // 
+            // AC_NotifyIcon
+            // 
+            this.AC_NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("AC_NotifyIcon.Icon")));
+            this.AC_NotifyIcon.Text = "SimpleAlarmClock";
+            this.AC_NotifyIcon.Visible = true;
+            // 
             // AC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +124,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AC";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AC_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -131,6 +139,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button btnLoadTimePreset;
+        private System.Windows.Forms.NotifyIcon AC_NotifyIcon;
     }
 }
 
