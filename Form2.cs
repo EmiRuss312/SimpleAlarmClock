@@ -12,6 +12,7 @@ namespace AlarmClock
 
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
