@@ -1,6 +1,7 @@
 ﻿using NAudio.Wave;
 using System;
 using System.IO;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AlarmClock
@@ -54,6 +55,7 @@ namespace AlarmClock
             AddButton.Enabled = false;
             dateTimePicker1.Enabled = false;
             btnLoadTimePreset.Enabled = false;
+            btnSoundCheck.Enabled = false;
 
             saveTimePreset("alarmTime.txt");
         }
@@ -65,11 +67,53 @@ namespace AlarmClock
             AddButton.Enabled = true;
             dateTimePicker1.Enabled = true;
             btnLoadTimePreset.Enabled = true;
+            btnSoundCheck.Enabled = true;
             btnStop.Visible = false;
 
             waveOutDevice?.Stop();
             audioFileReader?.Dispose();
             waveOutDevice?.Dispose();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            SoundChoise sc = new SoundChoise();
+            sc.FormClosed += soundChoiseClosed;
+            sc.Show();
+        }
+
+        private void btnLoadTimePreset_Click(object sender, EventArgs e)
+        {
+            loadTimePreset("alarmTime.txt");
+        }
+
+        private void btnSoundCheck_Click(object sender, EventArgs e)
+        {
+            if (waveOutDevice != null && waveOutDevice.PlaybackState == PlaybackState.Playing)
+            {
+                waveOutDevice.Stop();
+                waveOutDevice.Dispose();
+                waveOutDevice = null;
+                audioFileReader.Dispose();
+                audioFileReader = null;
+
+                dateTimePicker1.Enabled = true;
+                btnStart.Enabled = true;
+                btnLoadTimePreset.Enabled = true;
+                AddButton.Enabled = true;
+            }
+            else
+            {
+                waveOutDevice = new WaveOut();
+                audioFileReader = new AudioFileReader("Sound.mp3");
+                waveOutDevice.Init(audioFileReader);
+                waveOutDevice.Play();
+
+                dateTimePicker1.Enabled = false;
+                btnStart.Enabled = false;
+                btnLoadTimePreset.Enabled = false;
+                AddButton.Enabled = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -87,18 +131,6 @@ namespace AlarmClock
                 waveOutDevice.PlaybackStopped += onPlaybackStopped;
                 waveOutDevice.Play();
             }
-        }
-
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            SoundChoise sc = new SoundChoise();
-            sc.FormClosed += soundChoiseClosed;
-            sc.Show();
-        }
-
-        private void btnLoadTimePreset_Click(object sender, EventArgs e)
-        {
-            loadTimePreset("alarmTime.txt");
         }
 
         private void onPlaybackStopped(object sender, StoppedEventArgs e)

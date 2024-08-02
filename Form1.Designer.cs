@@ -38,6 +38,7 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.btnLoadTimePreset = new System.Windows.Forms.Button();
             this.AC_NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnSoundCheck = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -98,7 +99,7 @@
             // 
             this.btnLoadTimePreset.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadTimePreset.Image = ((System.Drawing.Image)(resources.GetObject("btnLoadTimePreset.Image")));
-            this.btnLoadTimePreset.Location = new System.Drawing.Point(105, 43);
+            this.btnLoadTimePreset.Location = new System.Drawing.Point(68, 43);
             this.btnLoadTimePreset.Name = "btnLoadTimePreset";
             this.btnLoadTimePreset.Size = new System.Drawing.Size(32, 32);
             this.btnLoadTimePreset.TabIndex = 5;
@@ -111,11 +112,23 @@
             this.AC_NotifyIcon.Text = "SimpleAlarmClock";
             this.AC_NotifyIcon.Visible = true;
             // 
+            // btnSoundCheck
+            // 
+            this.btnSoundCheck.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSoundCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnSoundCheck.Image")));
+            this.btnSoundCheck.Location = new System.Drawing.Point(106, 43);
+            this.btnSoundCheck.Name = "btnSoundCheck";
+            this.btnSoundCheck.Size = new System.Drawing.Size(32, 32);
+            this.btnSoundCheck.TabIndex = 6;
+            this.btnSoundCheck.UseVisualStyleBackColor = true;
+            this.btnSoundCheck.Click += new System.EventHandler(this.btnSoundCheck_Click);
+            // 
             // AC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(187, 77);
+            this.Controls.Add(this.btnSoundCheck);
             this.Controls.Add(this.btnLoadTimePreset);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.lblStatus);
@@ -140,6 +153,7 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button btnLoadTimePreset;
         private System.Windows.Forms.NotifyIcon AC_NotifyIcon;
+        private System.Windows.Forms.Button btnSoundCheck;
     }
 }
 
