@@ -150,10 +150,15 @@ namespace AlarmClock
             if (!File.Exists(@"Sound.mp3"))
             {
                 btnStart.Enabled = false;
+                btnSoundCheck.Enabled = false;
                 MessageBox.Show("Звуковой файл не обнаружен! Добавьте его.");
                 isHave = false;
             }
-            else btnStart.Enabled = true;
+            else
+            {
+                btnStart.Enabled = true;
+                btnSoundCheck.Enabled = true;
+            }
 
             return isHave;
         }
